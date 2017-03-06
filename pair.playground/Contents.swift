@@ -21,8 +21,17 @@ var arr = ["shaggy","amarachinzekwe","dewunmi","djubreel","tundeojediran","judek
 
 arr.shuffle()
 
-let output = stride(from: 0, to: arr.count - 1, by: 2).map {
-    (arr[$0], arr[$0+1])
-}
+// let output = stride(from: 0, to: arr.count - 1, by: 2).map {
+//     (arr[$0], arr[$0+1])
+// }
+var groups : [[String]] = Array(repeating: [], count: 5)
 
+var next = 0
+for ix in stride(from:0, to:9, by:2) {
+    for ixx in 0..<2 {
+        groups[next].append(arr[ix+ixx])
+    }
+    next += 1
+}
+groups
 
